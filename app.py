@@ -4,9 +4,9 @@ from dash import Dash, dcc, html, Input, Output, State
 import dash_bootstrap_components as dbc
 import dash_auth
 import pandas as pd
-from dotenv import load_dotenv, find_dotenv
+from dotenv import load_dotenv
 
-load_dotenv(find_dotenv())
+load_dotenv(".env")
 
 VALID_USERNAME_PASSWORD_PAIRS = {os.environ.get("APPUSER"): os.environ.get("PASSWORD")}
 
@@ -124,4 +124,4 @@ def refresh_data(value):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=bool(os.environ.get("DEBUG")))
+    app.run_server(debug=True)
